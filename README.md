@@ -51,7 +51,9 @@ crud-cv-maria/
 
 ### 1. Clonar o ingresar al directorio del proyecto:
 ```bash
-cd /home/richarddev/Documentos/crud-cv-maria
+git clone https://github.com/Inma5/crud
+
+cd crud-cv-maria
 ```
 
 ### 2. Instalar dependencias (si es necesario):
