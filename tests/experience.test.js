@@ -42,6 +42,13 @@ describe('Documentación Swagger y Rutas Base', () => {
     expect(res.body.paths).toHaveProperty('/api/experiencias');
     expect(res.body.paths).toHaveProperty('/api/experiencias/{id}');
   });
+
+  test('GET /api/health debe responder con estado del servicio y base de datos', async () => {
+    const res = await request(app).get('/api/health');
+    expect(res.status).toBe(200);
+    expect(res.body).toHaveProperty('status', 'OK');
+    expect(res.body.baseDeDatos).toHaveProperty('estado', 'Conectado');
+  });
 });
 
 describe('CRUD de Experiencias Profesionales (/api/experiencias)', () => {

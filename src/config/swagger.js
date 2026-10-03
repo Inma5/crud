@@ -1,3 +1,4 @@
+const path = require('path');
 const swaggerJsdoc = require('swagger-jsdoc');
 
 const port = process.env.PORT || 3000;
@@ -17,8 +18,8 @@ const options = {
     },
     servers: [
       {
-        url: `http://localhost:${port}`,
-        description: 'Servidor Local de Desarrollo'
+        url: '/',
+        description: 'Servidor Actual (Relativo - Funciona tanto en Local como en Vercel)'
       }
     ],
     components: {
@@ -179,7 +180,7 @@ const options = {
       }
     ]
   },
-  apis: ['./src/routes/*.js']
+  apis: [path.join(__dirname, '../routes/*.js')]
 };
 
 const swaggerSpec = swaggerJsdoc(options);

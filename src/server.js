@@ -36,4 +36,10 @@ const startServer = async () => {
   }
 };
 
-startServer();
+// Exportar la aplicación para entornos serverless (Vercel) y pruebas
+module.exports = app;
+
+// Iniciar el servidor HTTP únicamente si se ejecuta como script directo (desarrollo local / standalone)
+if (require.main === module && !process.env.VERCEL) {
+  startServer();
+}
