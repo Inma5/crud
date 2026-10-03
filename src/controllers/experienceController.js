@@ -24,7 +24,7 @@ const crearExperiencia = async (req, res, next) => {
       tecnologias
     } = req.body;
 
-    // Validación de coherencia de fechas
+    // Validación de coherencia de fechas xxxxxxxxxxxxx cambios test
     if (fechaInicio && fechaFin && !trabajoActual) {
       if (new Date(fechaFin) < new Date(fechaInicio)) {
         return res.status(400).json({
